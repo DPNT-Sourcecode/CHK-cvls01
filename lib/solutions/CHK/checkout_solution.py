@@ -43,7 +43,16 @@ def checkout(skus):
                             'O': 10, 'P': 50, 'Q': 30, 'R': 50, 'S': 30, 'T': 20, 'U': 40,
                             'V': 50, 'W': 20, 'X': 90, 'Y': 10, 'Z': 50}
 
-        def 
+        def items_one_free_cost(offer_constraint, total_count, item_name):  # return the total cost for bogof type offers
+            if total_count // offer_constraint > 0:  # some will be free -
+                count_of_full_groups = total_count // offer_constraint
+                total_count = total_count - count_of_full_groups  # subtract the free item Fs as per deal
+                total = shop_item_dictionary.get(item_name) * total_count  # total cost
+            else:
+                total = shop_item_dictionary.get(item_name) * total_count
+            return total
+
+            f_total_cost = shop_item_dictionary.get('F') * f_count  # all at normal cost as per new offer
         #shop_item_dictionary.get('A')
         # Total Up cost of occurrences of Item A
 
@@ -101,6 +110,8 @@ def checkout(skus):
         # Total Up cost of occurrences of Item F
 
         if f_count > 0:
+            f_total_cost = items_one_free_cost()
+
             if f_count // 3 > 0:  # some will be free - buy 2 get one free as long as 3 in basket
                 f_groups_of_three_count = f_count // 3
                 f_count = f_count - f_groups_of_three_count  # subtract the free item Fs as per deal
@@ -175,4 +186,5 @@ def checkout(skus):
 
 
     #raise NotImplementedError()
+
 
