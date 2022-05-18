@@ -43,6 +43,8 @@ def checkout(skus):
                             'O': 10, 'P': 50, 'Q': 30, 'R': 50, 'S': 30, 'T': 20, 'U': 40,
                             'V': 50, 'W': 20, 'X': 90, 'Y': 10, 'Z': 50}
 
+
+        #shop_item_dictionary.get('A')
         # Total Up cost of occurrences of Item A
 
         if a_count > 0:
@@ -84,7 +86,7 @@ def checkout(skus):
         # Total Up cost of occurrences of Item C
 
         if c_count > 0:
-            c_total_cost = c_count * 20
+            c_total_cost = c_count * shop_item_dictionary.get('C')
         else:
             c_total_cost = 0
 
@@ -112,5 +114,6 @@ def checkout(skus):
 
 
     #raise NotImplementedError()
+
 
 
