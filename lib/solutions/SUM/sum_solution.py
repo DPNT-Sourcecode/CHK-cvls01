@@ -8,4 +8,3 @@ def compute(x, y):
     else:
         return "Error - please check the numbers are integers between 0 and 100"
     #raise NotImplementedError()
-
