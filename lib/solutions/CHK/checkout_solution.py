@@ -4,17 +4,17 @@
 # skus = unicode string
 def checkout(skus):
     skus = str(skus)
-    allowed_chs = "ABCDE"
+    allowed_chs = "ABCDEF"
     if not all(ch in allowed_chs for ch in skus):  # make sure all string values are right otherwise return -1
 
         return -1
     else:
-        #global a_count
         a_count = skus.count("A")  # count occurrences of each item
         b_count = skus.count("B")
         c_count = skus.count("C")
         d_count = skus.count("D")
         e_count = skus.count("E")
+        f_count = skus.count("F")
 
         # Total Up cost of occurrences of Item A
 
@@ -68,7 +68,20 @@ def checkout(skus):
         else:
             d_total_cost = 0
 
-        total_cost = a_total_cost + b_total_cost + c_total_cost + d_total_cost + e_total_cost    # sum costs for all items
+        # Total Up cost of occurrences of Item F
+
+        if f_count > 0:
+            if f_count // 3 > 0:  # some will be free - buy 2 get one free as long as 3 in basket
+                f_groups_of_three_count = f_count // 3
+                f_count = f_count - f_groups_of_three_count  # subtract the free item Fs as per deal
+
+            f_total_cost = 10 * f_count  # all at normal cost as per new offer
+        else:
+            f_total_cost = 0
+
+        total_cost = a_total_cost + b_total_cost + c_total_cost + d_total_cost + e_total_cost + f_total_cost    # sum costs for all items
 
         return total_cost
+
+
     #raise NotImplementedError()
