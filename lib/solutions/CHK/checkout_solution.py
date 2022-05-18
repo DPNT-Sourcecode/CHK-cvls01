@@ -28,9 +28,9 @@ def checkout(skus):
             if a_count//3 > 0:  # some will be at discount cost
                 a_total_discount_three_grouping_count = a_count//3
                 a_count = a_count % 3
-                #a_total_cost = (200 * a_total_discount_five_grouping_count) + (130 * a_total_discount_three_grouping_count) + (50 * a_count  # all at normal cost as less than 3 items
-        #else:
-            #a_total_cost = 0
+                a_total_cost = (200 * a_total_discount_five_grouping_count) + (130 * a_total_discount_three_grouping_count) + (50 * a_count  # all at normal cost as less than 3 items
+        else:
+            a_total_cost = 0
 
         if b_count > 0:
             if b_count//2 > 0:  # some will be at discount cost
@@ -56,4 +56,5 @@ def checkout(skus):
 
         return total_cost
     #raise NotImplementedError()
+
 
