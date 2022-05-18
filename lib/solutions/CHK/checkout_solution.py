@@ -5,7 +5,7 @@
 def checkout(skus):
     skus = str(skus).upper()  # Convert string to Upper Case
     allowed_chs = "ABCD"
-    if not all(ch in allowed_chs for ch in allowed_chs): # make sure all string values are right otherwise return -1
+    if not all(ch in allowed_chs for ch in allowed_chs):  # make sure all string values are right otherwise return -1
 
         return -1
     else:
