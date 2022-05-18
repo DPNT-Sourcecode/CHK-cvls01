@@ -9,7 +9,7 @@ def checkout(skus):
 
         return -1
     else:
-        global a_count
+        #global a_count
         a_count = skus.count("A")  # count occurrences of each item
         b_count = skus.count("B")
         c_count = skus.count("C")
@@ -17,13 +17,14 @@ def checkout(skus):
         e_count = skus.count("E")
 
         # Total Up cost of occurrences of Item A
-        global a_total_discount_five_grouping_count
-        global a_total_discount_three_grouping_count
+        #global a_total_discount_five_grouping_count
+        #global a_total_discount_three_grouping_count
         #global a_count
-        global a_total_cost
+        #global a_total_cost
 
         if a_count > 0:
-
+            a_total_discount_five_grouping_count = 0
+            a_total_discount_three_grouping_count = 0
             if a_count//5 > 0:
                 a_total_discount_five_grouping_count = a_count//5
                 a_count = a_count % 5  # a_count will be the remaining amount
@@ -32,7 +33,7 @@ def checkout(skus):
                 a_total_discount_three_grouping_count = a_count//3
                 a_count = a_count % 3
 
-            a_total_cost = (200 * a_total_discount_five_grouping_count) + (130 * a_total_discount_three_grouping_count) + (50 * a_count)  # all at normal cost as less than 3 items
+            a_total_cost = (200 * a_total_discount_five_grouping_count) + (130 * a_total_discount_three_grouping_count) + (50 * a_count)  # total the cost
         else:
             a_total_cost = 0
 
@@ -60,5 +61,3 @@ def checkout(skus):
 
         return total_cost
     #raise NotImplementedError()
-
-
