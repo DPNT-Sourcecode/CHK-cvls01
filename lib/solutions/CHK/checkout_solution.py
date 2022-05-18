@@ -155,7 +155,7 @@ def checkout(skus):
         if r_count > 0:
             if r_count//3 > 0:  # some will be at discount cost
                 q_count = m_count - n_count//3
-            n_total_cost = shop_item_dictionary.get('N') * e_count  # all at normal cost as less than 2 items
+            n_total_cost = shop_item_dictionary.get('R') * e_count  # all at normal cost as less than 2 items
         else:
             n_total_cost = 0
 
@@ -200,3 +200,4 @@ def checkout(skus):
 
 
     #raise NotImplementedError()
+
