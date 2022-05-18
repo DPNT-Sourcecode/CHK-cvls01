@@ -110,13 +110,7 @@ def checkout(skus):
         # Total Up cost of occurrences of Item F
 
         if f_count > 0:
-            f_total_cost = items_one_free_cost()
-
-            if f_count // 3 > 0:  # some will be free - buy 2 get one free as long as 3 in basket
-                f_groups_of_three_count = f_count // 3
-                f_count = f_count - f_groups_of_three_count  # subtract the free item Fs as per deal
-
-            f_total_cost = shop_item_dictionary.get('F') * f_count  # all at normal cost as per new offer
+            f_total_cost = items_one_free_cost(2, f_count, 'F')
         else:
             f_total_cost = 0
 
@@ -140,15 +134,30 @@ def checkout(skus):
         else:
             l_total_cost = 0
 
+        if n_count > 0:
+            if n_count//3 > 0:  # some will be at discount cost
+                m_count = m_count - n_count//3
+            n_total_cost = shop_item_dictionary.get('N') * e_count  # all at normal cost as less than 2 items
+        else:
+            n_total_cost = 0
+
         if m_count > 0:
             m_total_cost = m_count * shop_item_dictionary.get('M')
         else:
             m_total_cost = 0
 
+
         if o_count > 0:
             o_total_cost = o_count * shop_item_dictionary.get('O')
         else:
             o_total_cost = 0
+
+        if r_count > 0:
+            if r_count//3 > 0:  # some will be at discount cost
+                q_count = m_count - n_count//3
+            n_total_cost = shop_item_dictionary.get('N') * e_count  # all at normal cost as less than 2 items
+        else:
+            n_total_cost = 0
 
         if s_count > 0:
             s_total_cost = s_count * shop_item_dictionary.get('S')
@@ -159,6 +168,11 @@ def checkout(skus):
             t_total_cost = t_count * shop_item_dictionary.get('T')
         else:
             t_total_cost = 0
+
+        if u_count > 0:
+            u_total_cost = items_one_free_cost(3, u_count, 'U')
+        else:
+            u_total_cost = 0
 
         if w_count > 0:
             w_total_cost = w_count * shop_item_dictionary.get('W')
@@ -186,5 +200,3 @@ def checkout(skus):
 
 
     #raise NotImplementedError()
-
-
