@@ -4,7 +4,7 @@
 # skus = unicode string
 def checkout(skus):
     skus = str(skus)
-    allowed_chs = "ABCD"
+    allowed_chs = "ABCDE"
     if not all(ch in allowed_chs for ch in skus):  # make sure all string values are right otherwise return -1
 
         return -1
@@ -13,16 +13,21 @@ def checkout(skus):
         b_count = skus.count("B")
         c_count = skus.count("C")
         d_count = skus.count("D")
+        e_count = skus.count("E")
 
         #Total Up cost of occurrences of Item A
 
         if a_count > 0:
+            a_total_discount_five_grouping_count = 0
+            if a_count//5 > 0:
+                a_total_discount_five_grouping_count = a_count//5
+                a_count = a_count % 5  # a_count will be the remaining amount
             if a_count//3 > 0:  # some will be at discount cost
-                a_total_discount_grouping_cost = a_count//3
+                a_total_discount_three_grouping_count = a_count//3
                 a_single_normal_cost = a_count % 3
-                a_total_cost = (130 * a_total_discount_grouping_cost) + (50 * a_single_normal_cost)
-            else:
-                a_total_cost = 50 * a_count  # all at normal cost as less than 3 items
+                a_total_cost = (200 * a_total_discount_five_grouping_count) + (130 * a_total_discount_three_grouping_count) + (50 * a_single_normal_cost)
+            #else:
+                #a_total_cost = (200 * a_total_discount_five_grouping_count) + (50 * a_count  # all at normal cost as less than 3 items
         else:
             a_total_cost = 0
 
@@ -50,3 +55,4 @@ def checkout(skus):
 
         return total_cost
     #raise NotImplementedError()
+
