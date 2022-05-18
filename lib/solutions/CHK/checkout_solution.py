@@ -16,20 +16,21 @@ def checkout(skus):
         e_count = skus.count("E")
 
         #Total Up cost of occurrences of Item A
+        #a_total_discount_five_grouping_count = 0
+        #a_total_discount_three_grouping_count = 0
 
         if a_count > 0:
-            a_total_discount_five_grouping_count = 0
+
             if a_count//5 > 0:
                 a_total_discount_five_grouping_count = a_count//5
                 a_count = a_count % 5  # a_count will be the remaining amount
+
             if a_count//3 > 0:  # some will be at discount cost
                 a_total_discount_three_grouping_count = a_count//3
-                a_single_normal_cost = a_count % 3
-                a_total_cost = (200 * a_total_discount_five_grouping_count) + (130 * a_total_discount_three_grouping_count) + (50 * a_single_normal_cost)
-            #else:
-                #a_total_cost = (200 * a_total_discount_five_grouping_count) + (50 * a_count  # all at normal cost as less than 3 items
-        else:
-            a_total_cost = 0
+                a_count = a_count % 3
+                #a_total_cost = (200 * a_total_discount_five_grouping_count) + (130 * a_total_discount_three_grouping_count) + (50 * a_count  # all at normal cost as less than 3 items
+        #else:
+            #a_total_cost = 0
 
         if b_count > 0:
             if b_count//2 > 0:  # some will be at discount cost
@@ -55,3 +56,4 @@ def checkout(skus):
 
         return total_cost
     #raise NotImplementedError()
+
