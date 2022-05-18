@@ -3,7 +3,7 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    skus = str(skus).upper()  # Convert string to Upper Case
+    skus = str(skus)
     allowed_chs = "ABCD"
     if not all(ch in allowed_chs for ch in skus):  # make sure all string values are right otherwise return -1
 
@@ -50,3 +50,4 @@ def checkout(skus):
 
         return total_cost
     #raise NotImplementedError()
+
