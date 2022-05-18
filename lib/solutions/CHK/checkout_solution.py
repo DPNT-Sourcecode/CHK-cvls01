@@ -5,7 +5,7 @@
 def checkout(skus):
     skus = str(skus).upper()  # Convert string to Upper Case
     allowed_chs = "ABCD"
-    if not all(ch in allowed_chs for ch in allowed_chs):  # make sure all string values are right otherwise return -1
+    if not all(ch in allowed_chs for ch in skus):  # make sure all string values are right otherwise return -1
 
         return -1
     else:
@@ -42,7 +42,7 @@ def checkout(skus):
             c_total_cost = 0
 
         if d_count > 0:
-            d_total_cost = d_count * 20
+            d_total_cost = d_count * 15
         else:
             d_total_cost = 0
 
@@ -50,5 +50,3 @@ def checkout(skus):
 
         return total_cost
     #raise NotImplementedError()
-
-
