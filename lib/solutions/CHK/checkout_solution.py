@@ -4,7 +4,7 @@
 # skus = unicode string
 def checkout(skus):
     skus = str(skus)
-    allowed_chs = "ABCDEF"
+    allowed_chs = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     if not all(ch in allowed_chs for ch in skus):  # make sure all string values are right otherwise return -1
 
         return -1
@@ -15,6 +15,30 @@ def checkout(skus):
         d_count = skus.count("D")
         e_count = skus.count("E")
         f_count = skus.count("F")
+        g_count = skus.count("G")
+        h_count = skus.count("H")
+        i_count = skus.count("I")
+        j_count = skus.count("J")
+        k_count = skus.count("K")
+        l_count = skus.count("L")
+        m_count = skus.count("M")
+        n_count = skus.count("N")
+        o_count = skus.count("O")
+        p_count = skus.count("P")
+        q_count = skus.count("Q")
+        r_count = skus.count("R")
+        s_count = skus.count("S")
+        t_count = skus.count("T")
+        u_count = skus.count("U")
+        v_count = skus.count("V")
+        w_count = skus.count("W")
+        x_count = skus.count("X")
+        y_count = skus.count("Y")
+        z_count = skus.count("Z")
+
+        # Create a lookup dictionary
+
+        shop_item_lookup = {'A', 50}
 
         # Total Up cost of occurrences of Item A
 
@@ -85,3 +109,4 @@ def checkout(skus):
 
 
     #raise NotImplementedError()
+
