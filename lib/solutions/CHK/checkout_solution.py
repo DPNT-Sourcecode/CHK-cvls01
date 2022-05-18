@@ -9,6 +9,7 @@ def checkout(skus):
 
         return -1
     else:
+        global a_count
         a_count = skus.count("A")  # count occurrences of each item
         b_count = skus.count("B")
         c_count = skus.count("C")
@@ -18,7 +19,7 @@ def checkout(skus):
         # Total Up cost of occurrences of Item A
         global a_total_discount_five_grouping_count
         global a_total_discount_three_grouping_count
-        global a_count
+        #global a_count
         global a_total_cost
 
         if a_count > 0:
