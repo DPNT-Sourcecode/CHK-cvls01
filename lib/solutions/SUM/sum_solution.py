@@ -1,5 +1,7 @@
 # noinspection PyShadowingBuiltins,PyUnusedLocal
 def compute(x, y):
+    x = input
+
     x = int(x)
     y = int(y)
     if 0 <= x <= 100 and 0 <= y <= 100:
@@ -8,3 +10,4 @@ def compute(x, y):
     else:
         return "Error - please check the numbers are integers between 0 and 100"
     #raise NotImplementedError()
+
