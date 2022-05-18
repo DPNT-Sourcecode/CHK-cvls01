@@ -3,6 +3,7 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    string.
+    str(skus).
     #raise NotImplementedError()
+
 
