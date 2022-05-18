@@ -17,10 +17,6 @@ def checkout(skus):
         e_count = skus.count("E")
 
         # Total Up cost of occurrences of Item A
-        #global a_total_discount_five_grouping_count
-        #global a_total_discount_three_grouping_count
-        #global a_count
-        #global a_total_cost
 
         if a_count > 0:
             a_total_discount_five_grouping_count = 0
@@ -31,11 +27,22 @@ def checkout(skus):
 
             if a_count//3 > 0:  # some will be at discount cost
                 a_total_discount_three_grouping_count = a_count//3
-                a_count = a_count % 3
+                a_count = a_count % 3  # These are charged at normal amount
 
             a_total_cost = (200 * a_total_discount_five_grouping_count) + (130 * a_total_discount_three_grouping_count) + (50 * a_count)  # total the cost
         else:
             a_total_cost = 0
+
+        # Total Up cost of occurrences of Item E which has implications on b_count - every two E items gives a free B item
+
+        if e_count > 0:
+            if e_count//2 > 0:  # some will be at discount cost
+                b_count = b_count - e_count//2
+            e_total_cost = 40 * e_count  # all at normal cost as less than 2 items
+        else:
+            e_total_cost = 0
+
+        # Total Up cost of occurrences of Item B
 
         if b_count > 0:
             if b_count//2 > 0:  # some will be at discount cost
@@ -47,17 +54,21 @@ def checkout(skus):
         else:
             b_total_cost = 0
 
+        # Total Up cost of occurrences of Item C
+
         if c_count > 0:
             c_total_cost = c_count * 20
         else:
             c_total_cost = 0
+
+        # Total Up cost of occurrences of Item D
 
         if d_count > 0:
             d_total_cost = d_count * 15
         else:
             d_total_cost = 0
 
-        total_cost = a_total_cost + b_total_cost + c_total_cost + d_total_cost    # sum costs for all items
+        total_cost = a_total_cost + b_total_cost + c_total_cost + d_total_cost + e_total_cost    # sum costs for all items
 
         return total_cost
     #raise NotImplementedError()
