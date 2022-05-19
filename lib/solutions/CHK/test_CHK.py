@@ -118,7 +118,7 @@ assert checkout_solution.checkout("VV") == 90
 
 x = checkout_solution.checkout("VVV")
 print("VVV " + str(x))
-assert checkout_solution.checkout("VVV") == 120
+assert checkout_solution.checkout("VVV") == 130
 
 x = checkout_solution.checkout("W")
 print("W " + str(x))
@@ -135,4 +135,5 @@ assert checkout_solution.checkout("Y") == 10
 x = checkout_solution.checkout("Z")
 print("Z " + str(x))
 assert checkout_solution.checkout("Z") == 50
+
 

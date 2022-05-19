@@ -208,12 +208,12 @@ def checkout(skus):
 
         # Total Up cost of occurrences of Item R
 
-            if r_count > 0:
-                if r_count // 3 > 0:  # some will be at discount cost
-                    q_count = q_count - r_count // 3  # reduce q_count as per the offer 3R get one Q free
-                r_total_cost = shop_item_dictionary.get('R') * r_count  # all at normal cost as less than 2 items
-            else:
-                r_total_cost = 0
+        if r_count > 0:
+            if r_count // 3 > 0:  # some will be at discount cost
+                q_count = q_count - r_count // 3  # reduce q_count as per the offer 3R get one Q free
+            r_total_cost = shop_item_dictionary.get('R') * r_count  # all at normal cost as less than 2 items
+        else:
+            r_total_cost = 0
 
         # Total Up cost of occurrences of Item Q
 
@@ -258,7 +258,7 @@ def checkout(skus):
                 v_count = v_count % 3  # v_count will be the remaining amount
 
             if v_count//2 > 0:  # some will be at discount cost
-                v_total_discount_two_grouping_count = h_count//2
+                v_total_discount_two_grouping_count = v_count//2
                 v_count = v_count % 2  # These are charged at normal amount
 
             v_total_cost = (130 * v_total_discount_three_grouping_count) + (90 * v_total_discount_two_grouping_count) \
@@ -304,3 +304,4 @@ def checkout(skus):
 
 
     #raise NotImplementedError()
+
