@@ -227,19 +227,7 @@ def checkout(skus):
         else:
             q_total_cost = 0
 
-        # Total Up cost of occurrences of Item S
 
-        if s_count > 0:
-            s_total_cost = s_count * shop_item_dictionary.get('S')
-        else:
-            s_total_cost = 0
-
-        # Total Up cost of occurrences of Item T
-
-        if t_count > 0:
-            t_total_cost = t_count * shop_item_dictionary.get('T')
-        else:
-            t_total_cost = 0
 
         # Total Up cost of occurrences of Item U
 
@@ -265,6 +253,22 @@ def checkout(skus):
                            + (shop_item_dictionary.get('V') * v_count)  # total the cost
         else:
             v_total_cost = 0
+
+        # Total Up number of S,T,U,V,W
+
+        # Total Up cost of occurrences of Item S
+
+            if s_count > 0:
+                s_total_cost = s_count * shop_item_dictionary.get('S')
+            else:
+                s_total_cost = 0
+
+            # Total Up cost of occurrences of Item T
+
+            if t_count > 0:
+                t_total_cost = t_count * shop_item_dictionary.get('T')
+            else:
+                t_total_cost = 0
 
         # Total Up cost of occurrences of Item W
 
@@ -304,3 +308,4 @@ def checkout(skus):
 
 
     #raise NotImplementedError()
+
