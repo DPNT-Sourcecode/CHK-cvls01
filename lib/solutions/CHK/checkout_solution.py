@@ -120,20 +120,20 @@ def checkout(skus):
             g_total_cost = 0
 
         if h_count > 0:
+            h_total_discount_ten_grouping_count = 0
             h_total_discount_five_grouping_count = 0
-            h_total_discount_three_grouping_count = 0
-            if h_count//5 > 0:
+            if h_count//10 > 0:
+                h_total_discount_ten_grouping_count = h_count//10
+                h_count = h_count % 10  # h_count will be the remaining amount
+
+            if h_count//5 > 0:  # some will be at discount cost
                 h_total_discount_five_grouping_count = h_count//5
-                h_count = h_count % 5  # a_count will be the remaining amount
+                h_count = a_count % 5  # These are charged at normal amount
 
-            if h_count//3 > 0:  # some will be at discount cost
-                h_total_discount_three_grouping_count = h_count//3
-                h_count = a_count % 3  # These are charged at normal amount
-
-            h_total_cost = (200 * h_total_discount_five_grouping_count) + (130 * h_total_discount_three_grouping_count) \
+            h_total_cost = (80 * h_total_discount_ten_grouping_count) + (45 * h_total_discount_five_grouping_count) \
                            + (shop_item_dictionary.get('H') * h_count)  # total the cost
         else:
-            a_total_cost = 0
+            h_total_cost = 0
 
         if i_count > 0:
             i_total_cost = i_count * shop_item_dictionary.get('I')
@@ -144,6 +144,18 @@ def checkout(skus):
             j_total_cost = j_count * shop_item_dictionary.get('J')
         else:
             j_total_cost = 0
+
+        # Total Up cost of occurrences of Item K
+
+        if k_count > 0:
+            if k_count//2 > 0:  # some will be at discount cost
+                k_total_discount_grouping_cost = b_count//2
+                k_single_normal_cost = b_count % 2
+                k_total_cost = (150 * k_total_discount_grouping_cost) + (shop_item_dictionary.get('K') * b_single_normal_cost)
+            else:
+                k_total_cost = shop_item_dictionary.get('K') * k_count  # all at normal cost as less than 2 items
+        else:
+            k_total_cost = 0
 
         if l_count > 0:
             l_total_cost = l_count * shop_item_dictionary.get('L')
@@ -168,6 +180,32 @@ def checkout(skus):
         else:
             o_total_cost = 0
 
+        # Total Up cost of occurrences of Item P
+
+        if p_count > 0:
+            if p_count//5 > 0:  # some will be at discount cost
+                p_total_discount_grouping_cost = p_count//5
+                p_single_normal_cost = p_count % 5
+                p_total_cost = (200 * p_total_discount_grouping_cost) + (shop_item_dictionary.get('P') * p_single_normal_cost)
+            else:
+                p_total_cost = shop_item_dictionary.get('P') * p_count  # all at normal cost as less than 2 items
+        else:
+            p_total_cost = 0
+
+        # Total Up cost of occurrences of Item Q
+
+        if q_count > 0:
+            if q_count//3 > 0:  # some will be at discount cost
+                q_total_discount_grouping_cost = q_count//3
+                q_single_normal_cost = q_count % 3
+                q_total_cost = (80 * q_total_discount_grouping_cost) + (shop_item_dictionary.get('Q') * q_single_normal_cost)
+            else:
+                q_total_cost = shop_item_dictionary.get('Q') * q_count  # all at normal cost as less than 2 items
+        else:
+            q_total_cost = 0
+
+        # Total Up cost of occurrences of Item R
+
         if r_count > 0:
             if r_count//3 > 0:  # some will be at discount cost
                 q_count = m_count - n_count//3
@@ -175,45 +213,82 @@ def checkout(skus):
         else:
             n_total_cost = 0
 
+        # Total Up cost of occurrences of Item S
+
         if s_count > 0:
             s_total_cost = s_count * shop_item_dictionary.get('S')
         else:
             s_total_cost = 0
+
+        # Total Up cost of occurrences of Item T
 
         if t_count > 0:
             t_total_cost = t_count * shop_item_dictionary.get('T')
         else:
             t_total_cost = 0
 
+        # Total Up cost of occurrences of Item U
+
         if u_count > 0:
             u_total_cost = items_one_free_cost(3, u_count, 'U')
         else:
             u_total_cost = 0
+
+        # Total Up cost of occurrences of Item V
+
+        if v_count > 0:
+            v_total_discount_three_grouping_count = 0
+            v_total_discount_two_grouping_count = 0
+            if v_count//3 > 0:
+                v_total_discount_three_grouping_count = v_count//3
+                v_count = v_count % 3  # v_count will be the remaining amount
+
+            if v_count//2 > 0:  # some will be at discount cost
+                v_total_discount_two_grouping_count = h_count//2
+                v_count = a_count % 2  # These are charged at normal amount
+
+            v_total_cost = (130 * v_total_discount_three_grouping_count) + (90 * v_total_discount_two_grouping_count) \
+                           + (shop_item_dictionary.get('V') * h_count)  # total the cost
+        else:
+            v_total_cost = 0
+
+        # Total Up cost of occurrences of Item W
 
         if w_count > 0:
             w_total_cost = w_count * shop_item_dictionary.get('W')
         else:
             w_total_cost = 0
 
+        # Total Up cost of occurrences of Item X
+
         if x_count > 0:
             x_total_cost = x_count * shop_item_dictionary.get('X')
         else:
             x_total_cost = 0
+
+        # Total Up cost of occurrences of Item Y
 
         if y_count > 0:
             y_total_cost = y_count * shop_item_dictionary.get('Y')
         else:
             y_total_cost = 0
 
+        # Total Up cost of occurrences of Item Z
+
         if z_count > 0:
             z_total_cost = y_count * shop_item_dictionary.get('Z')
         else:
             z_total_cost = 0
 
-        total_cost = a_total_cost + b_total_cost + c_total_cost + d_total_cost + e_total_cost + f_total_cost    # sum costs for all items
+        total_cost = a_total_cost + b_total_cost + c_total_cost + d_total_cost + e_total_cost + f_total_cost \
+                     + g_total_cost + h_total_cost + i_total_cost + j_total_cost + k_total_cost + l_total_cost /
+        m_total_cost + n_total_cost + o_total_cost + p_total_cost + q_total_cost + r_total_cost +
+                     s_total_cost + t_total_cost + u_total_cost + v_total_cost + w_total_cost + x_total_cost +
+                     y_total_cost + z_total_cost   # sum costs for all items
 
         return total_cost
 
 
     #raise NotImplementedError()
+
 
