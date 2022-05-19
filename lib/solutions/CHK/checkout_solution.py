@@ -254,7 +254,28 @@ def checkout(skus):
         else:
             v_total_cost = 0
 
-        # Total Up number of S,T,U,V,W
+        # Total Up number of S,T,X,Y,Z
+
+        sum_of_s_t_x_y_z = sum(s_countt_count,x_count,y_count,z_count)
+
+        if sum_of_s_t_x_y_z // 3 > 0:
+            s_t_x_y_z_discount_cost = sum_of_s_t_x_y_z // 3 * 45
+            s_t_x_y_z_remaining = sum_of_s_t_x_y_z % 3
+            while z_count > 0 and s_t_x_y_z_remaining > 0:   # order in favor of customer as to leave cheapest item at full price
+                z_count = z_count - 1
+                s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
+            while s_count > 0 and s_t_x_y_z_remaining > 0:
+                s_count = s_count - 1
+                s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
+            while t_count > 0 and s_t_x_y_z_remaining > 0:
+                t_count = t_count - 1
+                s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
+            while y_count > 0 and s_t_x_y_z_remaining > 0:
+                y_count = y_count - 1
+                s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
+            while x_count > 0 and s_t_x_y_z_remaining > 0:
+                x_count = x_count - 1
+                s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
 
         # Total Up cost of occurrences of Item S
 
@@ -302,10 +323,9 @@ def checkout(skus):
                      + g_total_cost + h_total_cost + i_total_cost + j_total_cost + k_total_cost + l_total_cost \
                      + m_total_cost + n_total_cost + o_total_cost + p_total_cost + q_total_cost + r_total_cost \
                      + s_total_cost + t_total_cost + u_total_cost + v_total_cost + w_total_cost + x_total_cost \
-                     + y_total_cost + z_total_cost   # sum costs for all items
+                     + y_total_cost + z_total_cost + s_t_x_y_z_discount_cost  # sum costs for all items
 
         return total_cost
 
 
     #raise NotImplementedError()
-
