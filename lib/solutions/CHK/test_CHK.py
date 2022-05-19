@@ -28,6 +28,10 @@ x = checkout_solution.checkout("G")
 print("G" + str(x))
 assert checkout_solution.checkout("G") == 20
 
+x = checkout_solution.checkout("H")
+print("H " + str(x))
+assert checkout_solution.checkout("H") == 10
+
 x = checkout_solution.checkout("HHHHH")
 print("HHHHH " + str(x))
 assert checkout_solution.checkout("HHHHH") == 45
@@ -42,7 +46,7 @@ assert checkout_solution.checkout("I") == 35
 
 x = checkout_solution.checkout("J")
 print("J " + str(x))
-assert checkout_solution.checkout("J") == 45
+assert checkout_solution.checkout("J") == 60
 
 x = checkout_solution.checkout("KK")
 print("KK " + str(x))
@@ -56,9 +60,9 @@ x = checkout_solution.checkout("M")
 print("M " + str(x))
 assert checkout_solution.checkout("M") == 15
 
-x = checkout_solution.checkout("NNNM")
-print("NNNM " + str(x))
-assert checkout_solution.checkout("NNNM") == 120
+x = checkout_solution.checkout("N")
+print("N " + str(x))
+assert checkout_solution.checkout("N") == 40
 
 x = checkout_solution.checkout("0")
 print("0 " + str(x))
@@ -104,14 +108,30 @@ x = checkout_solution.checkout("UUUU")
 print("UUUU " + str(x))
 assert checkout_solution.checkout("UUUU") == 120
 
-x = checkout_solution.checkout("VV")
-print("VV " + str(x))
-assert checkout_solution.checkout("VV") == 12
+x = checkout_solution.checkout("V")
+print("V " + str(x))
+assert checkout_solution.checkout("V") == 50
 
 x = checkout_solution.checkout("VV")
 print("VV " + str(x))
-assert checkout_solution.checkout("VV") == 120
+assert checkout_solution.checkout("VV") == 90
 
 x = checkout_solution.checkout("VVV")
 print("VVV " + str(x))
 assert checkout_solution.checkout("VVV") == 120
+
+x = checkout_solution.checkout("W")
+print("W " + str(x))
+assert checkout_solution.checkout("W") == 20
+
+x = checkout_solution.checkout("X")
+print("X " + str(x))
+assert checkout_solution.checkout("X") == 90
+
+x = checkout_solution.checkout("Y")
+print("Y " + str(x))
+assert checkout_solution.checkout("Y") == 10
+
+x = checkout_solution.checkout("Z")
+print("Z " + str(x))
+assert checkout_solution.checkout("Z") == 50

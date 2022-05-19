@@ -156,8 +156,8 @@ def checkout(skus):
 
         if k_count > 0:
             if k_count//2 > 0:  # some will be at discount cost
-                k_total_discount_grouping_cost = b_count//2
-                k_single_normal_cost = b_count % 2
+                k_total_discount_grouping_cost = k_count//2
+                k_single_normal_cost = k_count % 2
                 k_total_cost = (150 * k_total_discount_grouping_cost) + (shop_item_dictionary.get('K') * k_single_normal_cost)
             else:
                 k_total_cost = shop_item_dictionary.get('K') * k_count  # all at normal cost as less than 2 items
@@ -176,7 +176,7 @@ def checkout(skus):
         if n_count > 0:
             if n_count//3 > 0:  # some will be at discount cost
                 m_count = m_count - n_count//3  # reduce m_count as per the offer 3N get one M free
-            n_total_cost = shop_item_dictionary.get('N') * e_count  # all at normal cost as less than 2 items
+            n_total_cost = shop_item_dictionary.get('N') * n_count  # all at normal cost as less than 2 items
         else:
             n_total_cost = 0
 
