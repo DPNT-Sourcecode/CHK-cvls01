@@ -66,7 +66,7 @@ assert checkout_solution.checkout("N") == 40
 
 x = checkout_solution.checkout("O")
 print("0 " + str(x))
-assert checkout_solution.checkout("0") == 10
+assert checkout_solution.checkout("O") == 10
 
 x = checkout_solution.checkout("P")
 print("P " + str(x))
@@ -135,3 +135,4 @@ assert checkout_solution.checkout("Y") == 10
 x = checkout_solution.checkout("Z")
 print("Z " + str(x))
 assert checkout_solution.checkout("Z") == 50
+
