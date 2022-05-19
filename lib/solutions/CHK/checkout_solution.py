@@ -256,8 +256,10 @@ def checkout(skus):
 
         # Total Up number of S,T,X,Y,Z
 
-        sum_of_s_t_x_y_z = sum(s_countt_count,x_count,y_count,z_count)
-
+        s_t_x_y_z_list = [s_count, t_count, x_count, y_count, z_count]
+        sum_of_s_t_x_y_z = sum(s_t_x_y_z_list)
+        s_t_x_y_z_discount_cost = 0
+        
         if sum_of_s_t_x_y_z // 3 > 0:
             s_t_x_y_z_discount_cost = sum_of_s_t_x_y_z // 3 * 45
             s_t_x_y_z_remaining = sum_of_s_t_x_y_z % 3
@@ -279,17 +281,17 @@ def checkout(skus):
 
         # Total Up cost of occurrences of Item S
 
-            if s_count > 0:
-                s_total_cost = s_count * shop_item_dictionary.get('S')
-            else:
-                s_total_cost = 0
+        if s_count > 0:
+            s_total_cost = s_count * shop_item_dictionary.get('S')
+        else:
+            s_total_cost = 0
 
-            # Total Up cost of occurrences of Item T
+        # Total Up cost of occurrences of Item T
 
-            if t_count > 0:
-                t_total_cost = t_count * shop_item_dictionary.get('T')
-            else:
-                t_total_cost = 0
+        if t_count > 0:
+            t_total_cost = t_count * shop_item_dictionary.get('T')
+        else:
+            t_total_cost = 0
 
         # Total Up cost of occurrences of Item W
 

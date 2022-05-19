@@ -151,3 +151,11 @@ assert checkout_solution.checkout("Y") == 10
 x = checkout_solution.checkout("Z")
 print("Z " + str(x))
 assert checkout_solution.checkout("Z") == 50
+
+x = checkout_solution.checkout("STXYZ")
+print("STXYZ " + str(x))
+assert checkout_solution.checkout("STXYZ") == 135
+
+x = checkout_solution.checkout("STXYZZ")
+print("STXYZZ " + str(x))
+assert checkout_solution.checkout("STXYZ") == 156
