@@ -152,9 +152,9 @@ x = checkout_solution.checkout("Z")
 print("Z " + str(x))
 assert checkout_solution.checkout("Z") == 21
 
-# x = checkout_solution.checkout("STXYZ")
-# print("STXYZ " + str(x))
-# assert checkout_solution.checkout("STXYZ") == 135
+x = checkout_solution.checkout("STXX")
+print("STXX " + str(x))
+assert checkout_solution.checkout("STXX") == 135
 
 x = checkout_solution.checkout("STXYZZ")
 print("STXYZZ " + str(x))
