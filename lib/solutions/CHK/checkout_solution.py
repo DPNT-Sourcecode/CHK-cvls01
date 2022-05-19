@@ -119,6 +119,22 @@ def checkout(skus):
         else:
             g_total_cost = 0
 
+        if h_count > 0:
+            h_total_discount_five_grouping_count = 0
+            h_total_discount_three_grouping_count = 0
+            if h_count//5 > 0:
+                h_total_discount_five_grouping_count = h_count//5
+                h_count = h_count % 5  # a_count will be the remaining amount
+
+            if h_count//3 > 0:  # some will be at discount cost
+                h_total_discount_three_grouping_count = h_count//3
+                h_count = a_count % 3  # These are charged at normal amount
+
+            h_total_cost = (200 * h_total_discount_five_grouping_count) + (130 * h_total_discount_three_grouping_count) \
+                           + (shop_item_dictionary.get('H') * h_count)  # total the cost
+        else:
+            a_total_cost = 0
+
         if i_count > 0:
             i_total_cost = i_count * shop_item_dictionary.get('I')
         else:
@@ -200,3 +216,4 @@ def checkout(skus):
 
 
     #raise NotImplementedError()
+
