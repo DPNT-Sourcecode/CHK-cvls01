@@ -261,6 +261,7 @@ def checkout(skus):
             s_t_x_y_z_discount_cost = (sum_of_s_t_x_y_z // 3) * 45
             s_t_x_y_z_remaining = sum_of_s_t_x_y_z % 3
 
+
             while z_count > 0 and s_t_x_y_z_remaining > 0:   # order in favor of customer as to leave cheapest item at full price
                 z_count = z_count - 1
                 s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
@@ -329,4 +330,5 @@ def checkout(skus):
 
 
     #raise NotImplementedError()
+
 
