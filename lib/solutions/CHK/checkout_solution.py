@@ -46,7 +46,6 @@ def checkout(skus):
         def items_one_free_cost(offer_constraint, total_count, item_name):  # return the total cost for bogof type offers
             if total_count // offer_constraint > 0:  # some will be free -
                 count_of_full_groups = total_count // offer_constraint  # number of free items available
-
                 total_count = total_count - count_of_full_groups  # subtract the free item Fs as per deal
                 total = shop_item_dictionary.get(item_name) * total_count  # total cost
             else:
@@ -110,7 +109,7 @@ def checkout(skus):
         # Total Up cost of occurrences of Item F
 
         if f_count > 0:
-            f_total_cost = items_one_free_cost(2, f_count, 'F')
+            f_total_cost = items_one_free_cost(3, f_count, 'F')
         else:
             f_total_cost = 0
 
@@ -305,3 +304,4 @@ def checkout(skus):
 
 
     #raise NotImplementedError()
+

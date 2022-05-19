@@ -22,7 +22,23 @@ assert checkout_solution.checkout("EEB") == 80
 
 x = checkout_solution.checkout("FF")
 print("FF " + str(x))
-assert checkout_solution.checkout("FF") == 10
+assert checkout_solution.checkout("FF") == 20
+
+x = checkout_solution.checkout("FFF")
+print("FFF " + str(x))
+assert checkout_solution.checkout("FFF") == 20
+
+x = checkout_solution.checkout("FFFF")
+print("FFFF " + str(x))
+assert checkout_solution.checkout("FFFF") == 30
+
+x = checkout_solution.checkout("FFFFF")
+print("FFFFF " + str(x))
+assert checkout_solution.checkout("FFFFF") == 40
+
+x = checkout_solution.checkout("FFFFFF")
+print("FFFFF " + str(x))
+assert checkout_solution.checkout("FFFFFF") == 40
 
 x = checkout_solution.checkout("G")
 print("G" + str(x))
