@@ -254,8 +254,9 @@ def checkout(skus):
 
         # Total Up number of S,T,X,Y,Z
 
-        s_t_x_y_z_list = [s_count, t_count, x_count, y_count, z_count]
-        sum_of_s_t_x_y_z = sum(s_t_x_y_z_list)
+        # s_t_x_y_z_list = [s_count, t_count, x_count, y_count, z_count]
+        # sum_of_s_t_x_y_z = sum(s_t_x_y_z_list)
+        sum_of_s_t_x_y_z = s_count + t_count + x_count + y_count + z_count
         s_t_x_y_z_discount_cost = 0
 
         if sum_of_s_t_x_y_z // 3 > 0:
@@ -330,6 +331,7 @@ def checkout(skus):
 
 
     #raise NotImplementedError()
+
 
 
 
