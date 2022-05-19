@@ -252,16 +252,15 @@ def checkout(skus):
         else:
             v_total_cost = 0
 
-        # Total Up number of S,T,X,Y,Z
-
-        sum_of_s_t_x_y_z = s_count + t_count + x_count + y_count + z_count
+        sum_of_s_t_x_y_z = s_count + t_count + x_count + y_count + z_count  # Total Up number of S,T,X,Y,Z
         s_t_x_y_z_discount_cost = 0
+
+        # Work out the discount for STXYZ
 
         if sum_of_s_t_x_y_z // 3 > 0:
             s_t_x_y_z_discount_cost = (sum_of_s_t_x_y_z // 3) * 45
             s_t_x_y_z_remove = sum_of_s_t_x_y_z - sum_of_s_t_x_y_z % 3  # total to remove from count
 
-            #s_t_x_y_z_remove = 3
             while z_count > 0 and s_t_x_y_z_remove > 0:   # order in favor of customer as to leave cheapest item at full price
                 z_count = z_count - 1
                 s_t_x_y_z_remove = s_t_x_y_z_remove - 1

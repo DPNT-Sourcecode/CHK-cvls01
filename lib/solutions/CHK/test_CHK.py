@@ -154,8 +154,12 @@ assert checkout_solution.checkout("Z") == 21
 
 x = checkout_solution.checkout("STXXZ")
 print("STXXZ " + str(x))
-assert checkout_solution.checkout("STXXZ") == 135
+assert checkout_solution.checkout("STXXZ") == 79
 
 x = checkout_solution.checkout("STXYZZ")
 print("STXYZZ " + str(x))
-assert checkout_solution.checkout("STXYZ") == 156
+assert checkout_solution.checkout("STXYZZ") == 90
+
+x = checkout_solution.checkout("STXYZZZ")
+print("STXYZZ " + str(x))
+assert checkout_solution.checkout("STXYZZZ") == 107
