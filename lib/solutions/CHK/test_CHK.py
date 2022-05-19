@@ -64,6 +64,10 @@ x = checkout_solution.checkout("J")
 print("J " + str(x))
 assert checkout_solution.checkout("J") == 60
 
+x = checkout_solution.checkout("K")
+print("K " + str(x))
+assert checkout_solution.checkout("K") == 70
+
 x = checkout_solution.checkout("KK")
 print("KK " + str(x))
 assert checkout_solution.checkout("KK") == 150
@@ -163,3 +167,4 @@ assert checkout_solution.checkout("STXYZZ") == 90
 x = checkout_solution.checkout("STXYZZZ")
 print("STXYZZ " + str(x))
 assert checkout_solution.checkout("STXYZZZ") == 107
+
