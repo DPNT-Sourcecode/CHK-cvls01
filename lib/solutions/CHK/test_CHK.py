@@ -110,7 +110,7 @@ assert checkout_solution.checkout("RRRQ") == 150
 
 x = checkout_solution.checkout("S")
 print("S " + str(x))
-assert checkout_solution.checkout("S") == 30
+assert checkout_solution.checkout("S") == 20
 
 x = checkout_solution.checkout("T")
 print("T " + str(x))
@@ -142,15 +142,15 @@ assert checkout_solution.checkout("W") == 20
 
 x = checkout_solution.checkout("X")
 print("X " + str(x))
-assert checkout_solution.checkout("X") == 90
+assert checkout_solution.checkout("X") == 17
 
 x = checkout_solution.checkout("Y")
 print("Y " + str(x))
-assert checkout_solution.checkout("Y") == 10
+assert checkout_solution.checkout("Y") == 20
 
 x = checkout_solution.checkout("Z")
 print("Z " + str(x))
-assert checkout_solution.checkout("Z") == 50
+assert checkout_solution.checkout("Z") == 21
 
 x = checkout_solution.checkout("STXYZ")
 print("STXYZ " + str(x))

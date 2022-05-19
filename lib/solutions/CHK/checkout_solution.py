@@ -40,8 +40,8 @@ def checkout(skus):
 
         shop_item_dictionary = {'A': 50, 'B': 30, 'C': 20, 'D': 15, 'E': 40, 'F': 10, 'G': 20,
                             'H': 10, 'I': 35, 'J': 60, 'K': 80, 'L': 90, 'M': 15, 'N': 40,
-                            'O': 10, 'P': 50, 'Q': 30, 'R': 50, 'S': 30, 'T': 20, 'U': 40,
-                            'V': 50, 'W': 20, 'X': 90, 'Y': 10, 'Z': 50}
+                            'O': 10, 'P': 50, 'Q': 30, 'R': 50, 'S': 20, 'T': 20, 'U': 40,
+                            'V': 50, 'W': 20, 'X': 17, 'Y': 20, 'Z': 21}
 
         def items_one_free_cost(offer_constraint, total_count, item_name):  # return the total cost for bogof type offers
             if total_count // offer_constraint > 0:  # some will be free -
@@ -260,24 +260,24 @@ def checkout(skus):
         s_t_x_y_z_discount_cost = 0
 
         if sum_of_s_t_x_y_z // 3 > 0:
-            s_t_x_y_z_discount_cost = (sum_of_s_t_x_y_z // 3) * 45
+            s_t_x_y_z_discount_cost = (sum_of_s_t_x_y_z//3) * 45
             # print('s_t_x_y_z_discount_cost') = s_t_x_y_z_discount_cost
             s_t_x_y_z_remaining = sum_of_s_t_x_y_z % 3
-            # while z_count > 0 and s_t_x_y_z_remaining > 0:   # order in favor of customer as to leave cheapest item at full price
-            #     z_count = z_count - 1
-            #     s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
-            # while s_count > 0 and s_t_x_y_z_remaining > 0:
-            #     s_count = s_count - 1
-            #     s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
-            # while t_count > 0 and s_t_x_y_z_remaining > 0:
-            #     t_count = t_count - 1
-            #     s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
-            # while y_count > 0 and s_t_x_y_z_remaining > 0:
-            #     y_count = y_count - 1
-            #     s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
-            # while x_count > 0 and s_t_x_y_z_remaining > 0:
-            #     x_count = x_count - 1
-            #     s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
+            while z_count > 0 and s_t_x_y_z_remaining > 0:   # order in favor of customer as to leave cheapest item at full price
+                z_count = z_count - 1
+                s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
+            while s_count > 0 and s_t_x_y_z_remaining > 0:
+                s_count = s_count - 1
+                s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
+            while t_count > 0 and s_t_x_y_z_remaining > 0:
+                t_count = t_count - 1
+                s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
+            while y_count > 0 and s_t_x_y_z_remaining > 0:
+                y_count = y_count - 1
+                s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
+            while x_count > 0 and s_t_x_y_z_remaining > 0:
+                x_count = x_count - 1
+                s_t_x_y_z_remaining = s_t_x_y_z_remaining - 1
 
         # Total Up cost of occurrences of Item S
 
@@ -331,6 +331,7 @@ def checkout(skus):
 
 
     #raise NotImplementedError()
+
 
 
 
