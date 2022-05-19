@@ -261,22 +261,22 @@ def checkout(skus):
             s_t_x_y_z_discount_cost = (sum_of_s_t_x_y_z // 3) * 45
             s_t_x_y_z_remove = sum_of_s_t_x_y_z - sum_of_s_t_x_y_z % 3  # total to remove from count
 
-
+            #s_t_x_y_z_remove = 3
             while z_count > 0 and s_t_x_y_z_remove > 0:   # order in favor of customer as to leave cheapest item at full price
                 z_count = z_count - 1
-                s_t_x_y_z_remaining = s_t_x_y_z_remove - 1
+                s_t_x_y_z_remove = s_t_x_y_z_remove - 1
             while s_count > 0 and s_t_x_y_z_remove > 0:
                 s_count = s_count - 1
-                s_t_x_y_z_remaining = s_t_x_y_z_remove - 1
+                s_t_x_y_z_remove = s_t_x_y_z_remove - 1
             while t_count > 0 and s_t_x_y_z_remove > 0:
                 t_count = t_count - 1
-                s_t_x_y_z_remaining = s_t_x_y_z_remove - 1
+                s_t_x_y_z_remove = s_t_x_y_z_remove - 1
             while y_count > 0 and s_t_x_y_z_remove > 0:
                 y_count = y_count - 1
-                s_t_x_y_z_remaining = s_t_x_y_z_remove - 1
+                s_t_x_y_z_remove = s_t_x_y_z_remove - 1
             while x_count > 0 and s_t_x_y_z_remove > 0:
                 x_count = x_count - 1
-                s_t_x_y_z_remaining = s_t_x_y_z_remove - 1
+                s_t_x_y_z_remove = s_t_x_y_z_remove - 1
 
         # Total Up cost of occurrences of Item S
 
@@ -330,3 +330,4 @@ def checkout(skus):
 
 
     #raise NotImplementedError()
+
