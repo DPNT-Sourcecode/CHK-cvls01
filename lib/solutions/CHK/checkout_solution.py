@@ -113,10 +113,14 @@ def checkout(skus):
         else:
             f_total_cost = 0
 
+        # Total Up cost of occurrences of Item G
+
         if g_count > 0:
             g_total_cost = g_count * shop_item_dictionary.get('G')
         else:
             g_total_cost = 0
+
+        # Total Up cost of occurrences of Item H
 
         if h_count > 0:
             h_total_discount_ten_grouping_count = 0
@@ -127,17 +131,21 @@ def checkout(skus):
 
             if h_count//5 > 0:  # some will be at discount cost
                 h_total_discount_five_grouping_count = h_count//5
-                h_count = a_count % 5  # These are charged at normal amount
+                h_count = h_count % 5  # These are charged at normal amount
 
             h_total_cost = (80 * h_total_discount_ten_grouping_count) + (45 * h_total_discount_five_grouping_count) \
                            + (shop_item_dictionary.get('H') * h_count)  # total the cost
         else:
             h_total_cost = 0
 
+        # Total Up cost of occurrences of Item I
+
         if i_count > 0:
             i_total_cost = i_count * shop_item_dictionary.get('I')
         else:
             i_total_cost = 0
+
+        # Total Up cost of occurrences of Item J
 
         if j_count > 0:
             j_total_cost = j_count * shop_item_dictionary.get('J')
@@ -150,29 +158,36 @@ def checkout(skus):
             if k_count//2 > 0:  # some will be at discount cost
                 k_total_discount_grouping_cost = b_count//2
                 k_single_normal_cost = b_count % 2
-                k_total_cost = (150 * k_total_discount_grouping_cost) + (shop_item_dictionary.get('K') * b_single_normal_cost)
+                k_total_cost = (150 * k_total_discount_grouping_cost) + (shop_item_dictionary.get('K') * k_single_normal_cost)
             else:
                 k_total_cost = shop_item_dictionary.get('K') * k_count  # all at normal cost as less than 2 items
         else:
             k_total_cost = 0
+
+        # Total Up cost of occurrences of Item L
 
         if l_count > 0:
             l_total_cost = l_count * shop_item_dictionary.get('L')
         else:
             l_total_cost = 0
 
+        # Total Up cost of occurrences of Item N
+
         if n_count > 0:
             if n_count//3 > 0:  # some will be at discount cost
-                m_count = m_count - n_count//3
+                m_count = m_count - n_count//3  # reduce m_count as per the offer 3N get one M free
             n_total_cost = shop_item_dictionary.get('N') * e_count  # all at normal cost as less than 2 items
         else:
             n_total_cost = 0
+
+        # Total Up cost of occurrences of Item M
 
         if m_count > 0:
             m_total_cost = m_count * shop_item_dictionary.get('M')
         else:
             m_total_cost = 0
 
+        # Total Up cost of occurrences of Item O
 
         if o_count > 0:
             o_total_cost = o_count * shop_item_dictionary.get('O')
@@ -191,6 +206,15 @@ def checkout(skus):
         else:
             p_total_cost = 0
 
+        # Total Up cost of occurrences of Item R
+
+            if r_count > 0:
+                if r_count // 3 > 0:  # some will be at discount cost
+                    q_count = q_count - r_count // 3  # reduce q_count as per the offer 3R get one Q free
+                r_total_cost = shop_item_dictionary.get('R') * r_count  # all at normal cost as less than 2 items
+            else:
+                r_total_cost = 0
+
         # Total Up cost of occurrences of Item Q
 
         if q_count > 0:
@@ -202,15 +226,6 @@ def checkout(skus):
                 q_total_cost = shop_item_dictionary.get('Q') * q_count  # all at normal cost as less than 2 items
         else:
             q_total_cost = 0
-
-        # Total Up cost of occurrences of Item R
-
-        if r_count > 0:
-            if r_count//3 > 0:  # some will be at discount cost
-                q_count = m_count - n_count//3
-            r_total_cost = shop_item_dictionary.get('R') * r_count  # all at normal cost as less than 2 items
-        else:
-            r_total_cost = 0
 
         # Total Up cost of occurrences of Item S
 
@@ -244,10 +259,10 @@ def checkout(skus):
 
             if v_count//2 > 0:  # some will be at discount cost
                 v_total_discount_two_grouping_count = h_count//2
-                v_count = a_count % 2  # These are charged at normal amount
+                v_count = v_count % 2  # These are charged at normal amount
 
             v_total_cost = (130 * v_total_discount_three_grouping_count) + (90 * v_total_discount_two_grouping_count) \
-                           + (shop_item_dictionary.get('V') * h_count)  # total the cost
+                           + (shop_item_dictionary.get('V') * v_count)  # total the cost
         else:
             v_total_cost = 0
 
@@ -275,7 +290,7 @@ def checkout(skus):
         # Total Up cost of occurrences of Item Z
 
         if z_count > 0:
-            z_total_cost = y_count * shop_item_dictionary.get('Z')
+            z_total_cost = z_count * shop_item_dictionary.get('Z')
         else:
             z_total_cost = 0
 
