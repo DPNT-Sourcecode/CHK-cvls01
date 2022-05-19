@@ -118,7 +118,7 @@ assert checkout_solution.checkout("T") == 20
 
 x = checkout_solution.checkout("UUU")
 print("UUU " + str(x))
-assert checkout_solution.checkout("UUU") == 80
+assert checkout_solution.checkout("UUU") == 120
 
 x = checkout_solution.checkout("UUUU")
 print("UUUU " + str(x))
@@ -151,3 +151,4 @@ assert checkout_solution.checkout("Y") == 10
 x = checkout_solution.checkout("Z")
 print("Z " + str(x))
 assert checkout_solution.checkout("Z") == 50
+
