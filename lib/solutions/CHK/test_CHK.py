@@ -70,7 +70,15 @@ assert checkout_solution.checkout("K") == 70
 
 x = checkout_solution.checkout("KK")
 print("KK " + str(x))
-assert checkout_solution.checkout("KK") == 150
+assert checkout_solution.checkout("KK") == 120
+
+x = checkout_solution.checkout("KKK")
+print("KKK " + str(x))
+assert checkout_solution.checkout("KKK") == 190
+
+x = checkout_solution.checkout("KKKK")
+print("KKKK " + str(x))
+assert checkout_solution.checkout("KKKK") == 240
 
 x = checkout_solution.checkout("L")
 print("L " + str(x))
@@ -167,4 +175,5 @@ assert checkout_solution.checkout("STXYZZ") == 90
 x = checkout_solution.checkout("STXYZZZ")
 print("STXYZZ " + str(x))
 assert checkout_solution.checkout("STXYZZZ") == 107
+
 

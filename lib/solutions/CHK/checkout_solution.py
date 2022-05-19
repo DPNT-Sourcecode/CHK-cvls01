@@ -158,7 +158,7 @@ def checkout(skus):
             if k_count//2 > 0:  # some will be at discount cost
                 k_total_discount_grouping_cost = k_count//2
                 k_single_normal_cost = k_count % 2
-                k_total_cost = (150 * k_total_discount_grouping_cost) + (shop_item_dictionary.get('K') * k_single_normal_cost)
+                k_total_cost = (120 * k_total_discount_grouping_cost) + (shop_item_dictionary.get('K') * k_single_normal_cost)
             else:
                 k_total_cost = shop_item_dictionary.get('K') * k_count  # all at normal cost as less than 2 items
         else:
@@ -329,5 +329,6 @@ def checkout(skus):
 
 
     #raise NotImplementedError()
+
 
 
